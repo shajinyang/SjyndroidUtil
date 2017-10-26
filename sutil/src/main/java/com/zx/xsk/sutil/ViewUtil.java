@@ -38,8 +38,8 @@ public class ViewUtil {
         //调用下面这个方法非常重要，如果没有调用这个方法，得到的bitmap为null
         view.measure(View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.EXACTLY),
                 View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.EXACTLY));
-        //这个方法也非常重要，设置布局的尺寸和位置
-        view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+        //这个方法也非常重要，设置布局的尺寸和位置（会改变当前view 的布局属性，先注销）
+//        view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
         //获得绘图缓存中的Bitmap
         Bitmap bitmap = view.getDrawingCache();
         return bitmap;
